@@ -379,8 +379,7 @@ body {
 @media (max-width: 480px) {
   .main-name {
     font-family: "Aref Ruqaa" !important;
-    font-size: 40px !important;
-    font-weight: 400;
+    font-size: 48px !important;
     color: #D9BFA1 !important;;
     -webkit-text-fill-color: #D9BFA1 !important;
 
