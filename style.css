@@ -1,0 +1,1995 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family:
+      "Noto Naskh Arabic",  
+    serif;
+
+  color: #fff7ef;
+  background: #9d7d6a;
+}
+
+
+/* ==================================================
+   BACKGROUND
+   الخلفية مغبشة مثل التصميم السابق
+================================================== */
+
+/* .background {
+  position: fixed;
+  inset: -20px;
+
+  z-index: -3;
+
+  background:
+    url("images/wedding-bg.png")
+    center center /
+    cover
+    no-repeat;
+
+  filter:
+    blur(7px)
+    brightness(.78)
+    saturate(.88);
+
+  transform: scale(1.10);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(31, 20, 15, .12) 0%,
+      rgba(43, 28, 21, .20) 48%,
+      rgba(42, 27, 20, .30) 100%
+    );
+} */
+
+/* ==============================
+   الخلفية — مغبشة
+============================== */
+
+.background {
+  position: fixed;
+  inset: -20px;
+  z-index: -3;
+
+  background:
+    url("images/wedding-bg.png")
+    center center / cover no-repeat;
+
+  /* التغبيش هنا */
+  filter:
+    blur(6px)
+    brightness(.78)
+    saturate(.88);
+
+  transform: scale(1.10);
+}
+
+
+/* ==============================
+   الإطار الخارجي — شفاف فقط
+   بدون تغبيش
+============================== */
+
+.outer-frame {
+  position: absolute;
+
+  top: 70px;
+  bottom: 0;
+
+  left: -40px;
+  right: -40px;
+
+  width: calc(100% + 80px);
+  height: calc(100% - 70px);
+
+  z-index: 1;
+
+  background: rgba(35, 30, 27, 0.18);
+
+  border:
+    1.2px solid
+    rgba(218, 170, 112, 0.65);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 14px 32px
+    rgba(0, 0, 0, 0.10);
+
+  /* مهم: لا نحط blur هنا */
+}
+
+
+/* ==============================
+   الكاردات — مغبشة Glass
+============================== */
+
+.date-card,
+.place-card {
+  position: relative;
+  overflow: hidden;
+
+  /* شفافية */
+  background:
+    rgba(10, 10, 9,  0.40);
+
+  /* التغبيش داخل الكارد */
+  backdrop-filter:
+    blur(14px)
+    saturate(110%);
+
+  -webkit-backdrop-filter:
+    blur(14px)
+    saturate(110%);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.05);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.08);
+}
+
+/* ==================================================
+   PAGE
+================================================== */
+
+.page {
+  width: 100%;
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+
+  padding:
+    20px
+    8px
+    35px;
+    
+}
+
+
+/* ==================================================
+   INVITATION
+================================================== */
+
+.invitation {
+  position: relative;
+
+  width: calc(100% - 8px);
+  max-width: 430px;
+
+  min-height: 1160px;
+
+  isolation: isolate;
+}
+
+
+/*
+  مهم:
+  لا يوجد invitation::before هنا.
+  لأننا لا نريد طبقة Blur إضافية
+  فوق الإطار كله.
+*/
+
+
+/* ==================================================
+   OUTER FRAME
+================================================== */
+
+/* =========================================
+   SQUARE OUTER FRAME
+========================================= */
+
+.outer-frame {
+  position: absolute;
+
+  top: 70px;
+  bottom: 0;
+
+  left: -40px;
+  right: -20px;
+
+  width: calc(100% + 50px);
+  /* left: 5px;
+  right: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 70px); */
+
+  /* left: 20px;
+  right: 20px;
+  width: calc(100% - 40px); */
+
+  z-index: 1;
+
+  /* نفس الشفافية الحالية */
+  background: rgba(207, 203, 201, 0.22);
+
+  /* الإطار النحاسي */
+  border: 1.2px solid rgba(218, 170, 112, 0.65);
+
+  /* مربع مع تدوير بسيط فقط */
+  border-radius: 22px;
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.10);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  pointer-events: none;
+}
+
+.outer-frame path {
+
+  /*
+    شفاف مثل الصورة:
+    الخلفية تظهر من خلاله
+  */
+  fill: rgba(35, 30, 27, .22);
+
+  stroke:
+    rgba(225, 219, 212, 0.55);
+
+  stroke-width: 1.1;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  filter:
+    drop-shadow(
+      0 14px 32px
+      rgba(0, 0, 0, .10)
+    );
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo {
+  position: absolute;
+
+  top: 15px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width: 122px;
+
+  z-index: 7;
+
+  filter:
+    drop-shadow(
+      0 8px 14px
+      rgba(15, 7, 4, .25)
+    );
+}
+
+
+/* ==================================================
+   GOLD BRANCH
+================================================== */
+
+
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.content {
+  position: relative;
+
+  z-index: 4;
+
+  min-height: 1230px;
+
+  padding:
+    160px
+    18px
+    55px;
+
+  display: flex;
+  
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.b {
+    font-size: large;
+}
+
+/* ==================================================
+   INVITATION TEXT
+================================================== */
+
+.small-text {
+  font-size: 20px;
+
+  line-height: 1.65;
+
+  color:
+    rgba(255, 255, 255, .96);
+}
+
+.small-texts {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.main-name {
+  
+  font-family: "Aref Ruqaa Ink", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 5px 0;
+
+  font-size: 45px;
+
+  font-weight: 500;
+
+  line-height: 1.42;
+
+  color: #D9BFA1;
+
+  text-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, .10);
+}
+
+.middle-text {
+  margin:
+    18px 0
+    5px;
+}
+/* ----main name iphone */
+@media (max-width: 480px) {
+  .main-name {
+    /* font-family: "Aref Ruqaa Ink" !important; */
+    font-size: 35px !important;
+    font-weight: 400;
+  }
+}
+
+
+/* ==================================================
+   GOLD DIVIDERS
+================================================== */
+
+.divider {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  /* margin:
+    5px 0; */
+}
+
+.divider span {
+  width: 70px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #dda96b
+    );
+}
+
+.divider span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      #dda96b,
+      transparent
+    );
+}
+
+.divider b {
+  color: #e9af6c;
+
+  font-size: 15px;
+
+  font-weight: 400;
+    margin:
+    5px 0;
+  
+}
+
+
+/* ==================================================
+   DETAILS TITLE
+================================================== */
+
+.details-heading {
+   /* font-family: "Aref Ruqaa"; */
+  margin: 20px 0;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  /* color: #e9c39a; */
+}
+
+
+/* ==================================================
+   GLASS CARDS
+   هذا أهم تعديل
+================================================== */
+
+.date-card::before,
+.place-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(255, 255, 255, .025),
+      transparent 43%
+    ),
+
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, .015),
+      rgba(0, 0, 0, .05)
+    );
+}
+
+
+/*
+  كل محتويات الكارد تبقى
+  فوق طبقة الشفافية
+*/
+
+.date-card > *,
+.place-card > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* ==================================================
+   DATE CARD
+================================================== */
+
+.date-card {
+  width: 100%;
+
+  padding:
+    25px
+    24px
+    22px;
+
+  /*
+    نفس نعومة الكارد في الصورة
+  */
+  border-radius: 34px;
+}
+
+.date-top {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 22px;
+}
+
+.date-text {
+  text-align: center;
+}
+
+.arabic-date {
+  font-size: 16px;
+
+  color:
+    rgba(255, 255, 255, .97);
+}
+
+.english-date {
+  direction: ltr;
+
+  margin-top: 2px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+
+  color:
+    rgba(255, 255, 255, .96);
+}
+
+
+/* ==================================================
+   CALENDAR
+================================================== */
+
+.calendar-large {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+
+  /*
+    إذا تبينه أبيض مثل الصورة المرجعية
+  */
+  color: #fff;
+}
+
+.calendar-large svg {
+  width: 100%;
+  height: 100%;
+  
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.calendar-large span {
+  position: absolute;
+
+  top: 32px;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+}
+
+.calendar-large {
+  width: 60px !important;
+  height: 60px !important;
+
+  margin: 0 auto 20px !important;
+
+  position: relative !important;
+  align-self: center !important;
+}
+
+
+/* ==================================================
+   TIME
+================================================== */
+
+.time-row {
+  margin-top: 15px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: 18px;
+
+  color:
+    rgba(255, 255, 255, .96);
+}
+
+.clock {
+  width: 37px;
+  height: 37px;
+
+  color: #fff;
+}
+
+.clock svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+}
+
+
+/* ==================================================
+   MAIN BUTTON
+================================================== */
+
+.main-button {
+  min-width: 220px;
+
+  min-height: 56px;
+
+  margin-top: 19px;
+
+  padding:
+    8px
+    28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, .28);
+
+  border-radius: 999px;
+
+  /*
+    شبه شفاف مثل زر الصورة
+  */
+  background:
+    rgba(255, 255, 255, .025);
+
+  backdrop-filter:
+    blur(3px);
+
+  -webkit-backdrop-filter:
+
+    blur(3px);
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background .25s ease,
+    transform .25s ease;
+}
+
+.main-button:hover {
+  background:
+    rgba(255, 255, 255, .07);
+
+  transform:
+    translateY(-2px);
+}
+
+.button-icon {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 19px;
+}
+
+
+/* ==================================================
+   TWO LOCATION CARDS
+================================================== */
+
+.places-grid {
+  width: 100%;
+
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+/* ==================================================
+   PLACE CARDS
+================================================== */
+
+.place-card {
+
+  min-height: 270px;
+
+  padding:
+    36px
+    14px
+    24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  /*
+    نفس شكل كارد الصورة:
+    مستطيل بزوايا ناعمة
+  */
+  border-radius: 34px;
+}
+
+.place-card h3 {
+  margin-top: 8px;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  /*
+    أبيض مثل المرجع
+  */
+  color: #fff;
+
+  text-shadow:
+    0 2px 5px
+    rgba(0, 0, 0, .12);
+}
+
+.place-card p {
+  min-height: 44px;
+
+  margin-top: 4px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+
+  line-height: 1.55;
+
+  color:
+    rgba(255, 255, 255, .94);
+}
+
+
+/* ==================================================
+   ARCH ICON
+================================================== */
+
+.arch-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, .14);
+
+  border-radius:
+    32px
+    32px
+    12px
+    12px;
+}
+
+.arch-icon-inner {
+  width: 43px;
+  height: 43px;
+
+  /*
+    أبيض مثل أيقونات المرجع
+  */
+  color: #fff;
+}
+
+.arch-icon-inner svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* ==================================================
+   MINI DIVIDER
+================================================== */
+
+.small-divider {
+  width: 90%;
+
+  margin:
+    14px 0
+    12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.small-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(217, 163, 98, .65)
+    );
+}
+
+.small-divider span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(217, 163, 98, .65),
+      transparent
+    );
+}
+
+.small-divider b {
+  color: #dba96e;
+
+  font-size: 8px;
+}
+
+
+/* ==================================================
+   LOCATION LINK
+================================================== */
+
+.place-link {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease;
+
+  margin-top: 12px;
+}
+
+
+
+
+.place-link:hover {
+  transform:
+    translateX(-2px);
+
+  opacity: .85;
+}
+/* 
+.arrow-circle {
+  width: 27px;
+  height: 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, .24);
+
+  border-radius: 50%;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+} */
+
+
+/* ==================================================
+   ENDING
+================================================== */
+
+.ending-divider {
+  margin-top: 23px;
+}
+
+.ending {
+  font-size: 23px;
+
+  color: white;
+}
+
+.ending-leaf {
+  margin-top: 8px;
+
+  color: #dbaa6f;
+
+  font-size: 28px;
+
+  transform:
+    rotate(-15deg);
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+  .page {
+    width: 100%;
+
+    padding:
+      12px
+      10px
+      25px;
+
+    overflow-x: hidden;
+  }
+
+
+  /* =========================
+     MAIN CONTAINER
+  ========================= */
+
+  .invitation {
+    width:
+      calc(100% - 20px);
+
+    max-width: 390px;
+
+    min-height: 1160px;
+
+    margin:
+      0 auto;
+  }
+
+
+  /* =========================
+     FRAME
+  ========================= */
+
+  .outer-frame {
+    top: 0;
+
+    /* left: -14px;
+    right: -14px;
+
+    width:
+      calc(100% + 28px); */
+
+      left: 10px;
+      right: 10px;
+      width: calc(100% - 20px);
+
+    height: 1160px;
+  }
+
+
+  .outer-frame path {
+
+    /*
+      على الجوال نخليه شفاف
+      بنفس الدرجة تقريباً
+    */
+    fill:
+      rgba(35, 30, 27, .20);
+
+    stroke:
+      rgba(218, 170, 112, .50);
+  }
+
+
+  /* =========================
+     CONTENT
+  ========================= */
+
+
+ @media (max-width: 480px) {
+  .content {
+    min-height: 1160px;
+    padding: 150px 15px 45px !important;
+  }
+}
+
+
+  /* =========================
+     LOGO
+  ========================= */
+
+  .logo {
+    top: 13px;
+
+    width: 106px;
+  }
+
+
+  /* =========================
+     GOLD BRANCH
+  ========================= */
+
+.gold-branch {
+  position: absolute;
+
+  /* نخليه على طرف الإطار */
+  left: -72px;
+  top: 330px;
+
+  /* أكبر */
+  width: 215px;
+  height: auto;
+
+  z-index: 6;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 6px 10px
+      rgba(17, 8, 4, .20)
+    );
+}
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  .small-text {
+    font-size:
+      clamp(
+        15px,
+        4.3vw,
+        18px
+      );
+  }
+
+  .main-name {
+    font-size:
+      clamp(
+        24px,
+        7vw,
+        29px
+      );
+  }
+
+
+  /* =========================
+     DIVIDERS
+  ========================= */
+
+  .divider {
+    margin:
+      5px 0;
+  }
+
+  .divider span {
+    width: 52px;
+  }
+
+  .details-heading {
+    font-size: 18px;
+  }
+
+
+  /* =========================
+     GLASS CARDS ON MOBILE
+  ========================= */
+
+  .date-card,
+  .place-card {
+
+    /*
+      هذه أهم القيم للجوال
+    */
+    background:
+      rgba(10, 10, 9, .46);
+
+    backdrop-filter:
+      blur(12px)
+      saturate(110%);
+
+    -webkit-backdrop-filter:
+      blur(12px)
+      saturate(110%);
+
+    border:
+      1px solid
+      rgba(255, 255, 255, .035);
+
+    box-shadow:
+      0 10px 30px
+      rgba(0, 0, 0, .08),
+
+      inset 0 1px 0
+      rgba(255, 255, 255, .018);
+
+    border-radius: 30px;
+  }
+
+
+  /* =========================
+     DATE
+  ========================= */
+
+  .date-card {
+    width: 100%;
+
+    padding:
+      22px
+      17px
+      20px;
+  }
+
+  .date-top {
+    gap: 15px;
+  }
+
+  .arabic-date {
+    font-size: 16px;
+  }
+
+  .english-date {
+    font-size: 14px;
+  }
+
+  .calendar-large {
+    width: 52px;
+    height: 52px;
+  }
+
+  .calendar-large span {
+    top: 28px;
+
+    font-size: 18px;
+  }
+
+
+  /* =========================
+     TIME
+  ========================= */
+
+  .time-row {
+    font-size: 15px;
+  }
+
+  .clock {
+    width: 32px;
+    height: 32px;
+  }
+
+
+  /* =========================
+     REMINDER BUTTON
+  ========================= */
+
+  .main-button {
+    min-width:
+      min(210px, 88%);
+
+    min-height: 52px;
+
+    font-size: 18px;
+  }
+
+
+  /* =========================
+     LOCATION CARDS
+  ========================= */
+
+  .places-grid {
+    width: 100%;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 10px;
+  }
+
+  .place-card {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 250px;
+
+    padding:
+      30px
+      9px
+      20px;
+
+    /*
+      نفس الكارد المرجعي:
+      لا نخليه قوس كبير
+    */
+    border-radius: 30px;
+  }
+
+  .arch-icon {
+    width: 57px;
+    height: 57px;
+  }
+
+  .arch-icon-inner {
+    width: 38px;
+    height: 38px;
+  }
+
+  .place-card h3 {
+    font-size: 18px;
+  }
+
+  .place-card p {
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+  }
+
+  .place-link {
+    font-size: 13px;
+  }
+/* 
+  .arrow-circle {
+    width: 24px;
+    height: 24px;
+  } */
+
+
+  /* =========================
+     ENDING
+  ========================= */
+
+  .ending {
+    font-size: 20px;
+  }
+}
+
+
+/* ==================================================
+   VERY SMALL PHONES
+================================================== */
+
+@media (max-width: 480px) {
+
+  .page {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .invitation {
+    width: calc(100% - 20px);
+    max-width: 390px;
+
+    min-height: auto !important;
+
+    margin: 0 auto;
+  }
+
+   .outer-frame {
+    top: 80px !important;
+    bottom: 0 !important;
+
+    left: 10px;
+    right: 10px;
+    width: auto !important;
+
+
+    height: auto !important;
+    bottom: 0 !important;
+  }
+
+
+
+  .content {
+   padding: 120px 15px 45px !important;
+    min-height: auto !important;
+  }
+
+    .gold-branch {
+    left: -35px;
+    top: 315px;
+
+    width: 155px;
+  }
+
+  .places-grid {
+    gap: 7px;
+  }
+
+  .place-card {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .place-card h3 {
+    font-size: 16px;
+  }
+
+  .place-card p,
+  .place-link {
+    font-size: 12px;
+  }
+}
+/* 
+@media (max-width: 480px) {
+  .content {
+    padding: 232px 25px 45px !important;
+  }
+} */
+
+/* =========================================
+   GOLD BRANCH
+   يبدأ من أسفل الإطار ويمتد للأعلى
+========================================= */
+
+/* =========================================
+   GOLD BRANCH — ممتد على كامل الإطار
+========================================= */
+
+
+
+/* =========================================
+   SMOOTH CARD HOVER
+========================================= */
+
+.date-card,
+.place-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+
+  will-change: transform;
+
+  
+}
+
+
+  .date-card {
+    width: calc(100% - 24px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .places-grid {
+    width: calc(100% - 24px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+.date-card:hover,
+.place-card:hover {
+  /* حركة خفيفة للأعلى */
+  transform: translateY(-6px);
+
+  /* شفافية أفتح قليلًا */
+  background: rgba(82, 66, 35, 0.5);
+
+  border-color: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================
+   LOCATION BUTTON
+========================================= */
+
+.place-link {
+  min-width: 125px;
+  min-height: 43px;
+
+  padding: 7px 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  /* زر مثل أزرار التصميم المرجعي */
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.place-link:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.40);
+}
+
+
+/* الدائرة الصغيرة داخل زر الموقع */
+.arrow-circle {
+  width: 25px;
+  height: 25px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%; */
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+
+/* =========================================
+   REMINDER BUTTON
+========================================= */
+
+.main-button {
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.main-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.40);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .place-link {
+    min-width: 110px;
+    min-height: 40px;
+
+    padding: 6px 12px;
+
+    font-size: 13px;
+  }
+
+}
+
+/* الدعاء الذهبي فوق نص يتشرف */
+.dua-image {
+  display: block;
+
+  width: 800px;
+  max-width: 85%;
+
+  height: auto;
+
+  margin: 0 auto 10px;
+
+  object-fit: contain;
+
+  position: relative;
+  z-index: 8;
+}
+
+@media (max-width: 480px) {
+  .dua-image {
+    width: 300px;
+    max-width: 100%;
+
+    margin: 0 auto 8px;
+  }
+}
+
+.Fahad-image {
+  display: block;
+
+  width: 900px;
+  max-width: 80%;
+
+  height: auto;
+
+  margin: 5px auto 10px;
+
+  object-fit: contain;
+
+  position: relative;
+  z-index: 8;
+}
+
+@media (max-width: 480px) {
+  .Fahad-image{
+    width: 300px;
+    max-width: 80%;
+
+    margin: 0 auto 8px;
+  }
+}
+
+/* =========================================
+   FINAL BACKGROUND + FRAME GLASS FIX
+   الخلفية واضحة - داخل الإطار مغبش
+========================================= */
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: url("images/wedding-bg.png") center center / cover no-repeat;
+  filter:
+   /* brightness(.78) saturate(.90) !important; */
+  blur(4px)
+  brightness(.78)
+  saturate(.90) !important;
+  transform: scale(1.03) !important;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(31,20,15,.08) 0%, rgba(43,28,21,.12) 48%, rgba(42,27,20,.18) 100%);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.outer-frame {
+  background: rgba(30,25,22,.20) !important;
+  backdrop-filter: blur(13px) saturate(105%) !important;
+  -webkit-backdrop-filter: blur(13px) saturate(105%) !important;
+}
+
+.outer-frame path {
+  fill: rgba(30,25,22,.18) !important;
+  stroke: rgba(218,170,112,.65) !important;
+}
+
+.date-card,
+.place-card {
+  background: rgba(61, 61, 61, 0.32) !important;
+  backdrop-filter: blur(10px) saturate(110%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(110%) !important;
+  border: 1px solid rgba(255,255,255,.055) !important;
+}
+
+.date-card::before,
+.place-card::before {
+  background: linear-gradient(145deg, rgba(255,255,255,.025), rgba(0,0,0,.035)) !important;
+}
+
+@media (max-width: 480px) {
+  .background {
+    inset: -10px !important;
+
+    filter:
+      blur(4px)
+      brightness(.78)
+      saturate(.90) !important;
+
+    transform: scale(1.05) !important;
+  }
+
+  .outer-frame {
+    background: rgba(30,25,22,.20) !important;
+    backdrop-filter: blur(13px) saturate(105%) !important;
+    -webkit-backdrop-filter: blur(13px) saturate(105%) !important;
+  }
+  .date-card, .place-card {
+    background: rgba(18,16,14,.32) !important;
+    backdrop-filter: blur(10px) saturate(110%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(110%) !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .logo {
+    left: 50% !important;
+    right: auto !important;
+    top: 13px;
+    width: 106px;
+
+    animation: logoFloatMobile 3.5s ease-in-out infinite;
+  }
+
+  @keyframes logoFloatMobile {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(-7px);
+    }
+  }
+
+}
+/* إصلاح أرقام التقويم */
+.calendar-large .calendar-numbers {
+  position: absolute !important;
+  top: 23px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 1px;
+  line-height: 1;
+}
+
+/* يلغي الـ position القديم عن الرقمين */
+.calendar-large .calendar-numbers span {
+  position: static !important;
+  transform: none !important;
+  /* display: flex;
+  justify-content: center; */
+
+  display: block !important;
+  width: auto !important;
+}
+
+.calendar-day {
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+.calendar-hijri {
+  margin-top: 2px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+}
+
+/* =========================================
+   CARD GLASS - SAME AS REFERENCE
+   لا يغير المقاسات أو التصميم
+========================================= */
+
+.date-card,
+.place-card {
+  background: rgba(18, 14, 11, 0.38) !important;
+
+  backdrop-filter: blur(14px) saturate(105%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(105%) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.045) !important;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025) !important;
+}
+
+
+/* طبقة خفيفة جدًا فوق الزجاج */
+.date-card::before,
+.place-card::before {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.015),
+      rgba(0, 0, 0, 0.035)
+    ) !important;
+}
+
+
+/* نفس الشفافية على الجوال */
+@media (max-width: 480px) {
+
+  .date-card,
+  .place-card {
+    background: rgba(18, 14, 11, 0.38) !important;
+
+    backdrop-filter: blur(14px) saturate(105%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(105%) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.045) !important;
+  }
+
+}
+
+/* =========================================
+   ICONS COLOR - SAME AS FRAME
+========================================= */
+
+/* أيقونة التقويم */
+.calendar-large {
+  color: rgba(218, 170, 112, 0.90) !important;
+}
+
+/* أيقونات الموقع والقاعة */
+.arch-icon-inner {
+  color: rgba(218, 170, 112, 0.90) !important;
+}
+
+/* إطار الأيقونة المقوسة */
+.arch-icon {
+  border-color: rgba(218, 170, 112, 0.45) !important;
+}
+
+/* أيقونة الساعة إذا استخدمتيها */
+.clock {
+  color: rgba(218, 170, 112, 0.90) !important;
+}
+
+/* السهم داخل زر عرض الموقع */
+.arrow-circle {
+  color: rgba(218, 170, 112, 0.90) !important;
+  border-color: rgba(218, 170, 112, 0.45) !important;
+
+  
+}
+/* 
+.logo {
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+} */
+
+.logo {
+  animation: logoFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    filter: drop-shadow(0 8px 14px rgba(15, 7, 4, 0.25));
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-7px);
+    filter:
+      drop-shadow(0 10px 18px rgba(218, 170, 112, 0.25));
+  }
+}
+
+
+.divider {
+  margin: 0 !important;
+}
+
+.main-name {
+  margin: 0 !important;
+
+}
+
+
+@media (max-width: 480px) {
+
+  .invitation {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .content {
+    width: 100% !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .date-card,
+  .places-grid,
+  .dua-image,
+  .Fahad-image,
+  .divider {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .divider {
+    width: 20% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* ==================================================
+   FINAL RESPONSIVE FRAME FIX
+   توسيط الإطار على الجوال والكمبيوتر
+================================================== */
+
+/* إذا كان الـ SVG القديم ما زال موجودًا في HTML نخفيه
+   ونستخدم div.outer-frame فقط كإطار فعلي */
+svg.outer-frame {
+  display: none !important;
+}
+
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.invitation {
+  position: relative;
+  width: min(100%, 430px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.outer-frame {
+  position: absolute;
+
+  /* نفس المسافة يمين ويسار = الإطار في المنتصف دائمًا */
+  left: 12px !important;
+  right: 12px !important;
+  width: auto !important;
+  max-width: none !important;
+
+  top: 70px;
+  bottom: 0 !important;
+  height: auto !important;
+
+  transform: none !important;
+}
+
+@media (max-width: 480px) {
+  .page {
+    width: 100%;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+    overflow-x: hidden;
+  }
+
+  .invitation {
+    width: 100% !important;
+    max-width: 390px !important;
+    min-height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+   .outer-frame {
+    left: 22px !important;
+    right: 22px !important;
+    width: auto !important;
+
+    top: 80px !important;
+    bottom: 0 !important;
+    height: auto !important;
+
+    transform: none !important;
+  
+  }
+
+  .content {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 120px 15px 45px !important;
+    min-height: auto !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+
+  .date-card {
+    width: calc(100% - 70px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .places-grid {
+    width: calc(100% - 70px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+}
+
