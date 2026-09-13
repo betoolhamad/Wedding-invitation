@@ -1637,15 +1637,25 @@ body {
 
 .background {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+
   z-index: -3;
-  background: url("images/wedding-bg.png") center center / cover no-repeat;
+
+  background:
+    url("images/wedding-bg.png")
+    center center / cover no-repeat;
+
   filter:
-   /* brightness(.78) saturate(.90) !important; */
-  blur(4px)
-  brightness(.78)
-  saturate(.90) !important;
-  transform: scale(1.03) !important;
+    blur(4px)
+    brightness(.78)
+    saturate(.90) !important;
+
+  transform: none !important;
 }
 
 .overlay {
@@ -1685,15 +1695,22 @@ body {
 
 @media (max-width: 480px) {
   .background {
-    inset: -10px !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
 
-    filter:
-      blur(4px)
-      brightness(.78)
-      saturate(.90) !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100lvh !important;
 
-    transform: scale(1.05) !important;
-  }
+  filter:
+    blur(4px)
+    brightness(.78)
+    saturate(.90) !important;
+
+  transform: none !important;
+}
 
   .outer-frame {
     background: rgba(30,25,22,.20) !important;
