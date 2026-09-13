@@ -344,7 +344,7 @@ body {
 }
 
 .small-texts {
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 20px;
 }
 
@@ -2000,7 +2000,7 @@ svg.outer-frame {
      width: 100% !important;
      margin-left: auto !important;
      margin-right: auto !important;
-    padding: 128px 54px 50px !important;
+    padding: 128px 60px 28px !important;
      min-height: auto !important;
      align-items: center !important;
      text-align: center !important;
