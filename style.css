@@ -378,7 +378,7 @@ body {
 /* ----main name iphone */
 @media (max-width: 480px) {
   .main-name {
-    /* font-family: "Aref Ruqaa Ink" !important; */
+    font-family: "Aref Ruqaa" !important;
     font-size: 40px !important;
     font-weight: 400;
     color: #D9BFA1 !important;;
@@ -454,7 +454,7 @@ body {
 @media (max-width: 480px) {
   .small-text,
   .details-heading {
-    font-size: 21px !important;
+    font-size: 20px !important;
     line-height: 1.7 !important;
   }
 }
