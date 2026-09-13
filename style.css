@@ -359,7 +359,7 @@ body {
 
   line-height: 1.42;
 
-  color: #D9BFA1;
+  color: #D9BFA1 !important;;
 
   text-shadow:
     0 2px 8px
