@@ -454,7 +454,7 @@ body {
 @media (max-width: 480px) {
   .small-text,
   .details-heading {
-    font-size: 20px !important;
+    font-size: 22px !important;
     line-height: 1.7 !important;
   }
 }
