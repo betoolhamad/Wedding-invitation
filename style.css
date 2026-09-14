@@ -4,14 +4,32 @@
   box-sizing: border-box;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
+} */
+
+html,
+
+body {
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  width: 100%;
+
+  min-height: 100%;
+
+  /* background-color: #2b1a14 !important; */
+
+  overflow-x: hidden;
+
 }
 
 
 body {
 
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* overflow-x: hidden; */
 
   font-family:
@@ -20,13 +38,51 @@ body {
 
   color: #fff7ef;
   /* background-color: #2b1a14 !important; */
-    background-color: #ffffff !important;
+    /* background-color: #ffffff !important; */
   margin: 0;
   padding-top: 45px;      
   /* padding: 0 12px; */
 }
 
+body::before {
 
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background-image: url("/images/coat-bg.png");
+
+  background-position: center;
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  filter: blur(1.5px); /* درجة التغبيش */
+
+  transform: scale(1.03);
+}
+
+/* الإطار ثابت ولا يرتفع مع السكرول */
+
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+}
 /* ==================================================
    BACKGROUND
    الخلفية مغبشة مثل التصميم السابق
