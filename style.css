@@ -6,7 +6,9 @@
 
 html {
   scroll-behavior: smooth;
+
 }
+
 
 body {
   min-height: 100vh;
@@ -17,7 +19,7 @@ body {
     serif;
 
   color: #fff7ef;
-  background: #9d7d6a;
+  background-color: #2b1a14 !important;
   margin-top: 45px;
   /* padding: 0 12px; */
 }
@@ -1594,7 +1596,7 @@ body {
 .Fahad-image {
   display: block;
 
-  width: 700px;
+  width: 800px;
   max-width: 80%;
 
   height: auto;
@@ -1609,7 +1611,7 @@ body {
 
 @media (max-width: 480px) {
   .Fahad-image{
-    width: 230px;
+    width: 240px;
     max-width: 80%;
 
     margin: 0 auto 8px;
