@@ -67,23 +67,23 @@ body {
    الخلفية — مغبشة
 ============================== */
 
-.background {
+/* .background {
   position: fixed;
   inset: -20px;
   z-index: -3;
 
   background:
-    url("images/wedding-bg.png")
+    url("images/coat-bg.png")
     center center / cover no-repeat;
 
-  /* التغبيش هنا */
+
   filter:
-    blur(6px)
+    blur(2px)
     brightness(.78)
     saturate(.88);
 
   transform: scale(1.10);
-}
+} */
 
 .words {
   font-size: 18px;
@@ -272,13 +272,13 @@ body {
 .logo {
   position: absolute;
 
-  top: 15px;
+  /* top: 10px; */
   left: 50%;
 
   transform:
     translateX(-50%);
 
-  width: 122px;
+  width: 110px;
 
   z-index: 7;
 
@@ -445,7 +445,7 @@ body {
 @media (max-width: 480px) {
   .small-text,
   .details-heading {
-    font-size: 20px !important;
+       font-size: 20px !important;
     line-height: 1.7 !important;
     white-space: nowrap;
     
@@ -1569,7 +1569,7 @@ body {
 .dua-image {
   display: block;
 
-  width: 800px;
+  width: 700px;
   max-width: 85%;
 
   height: auto;
@@ -1584,7 +1584,7 @@ body {
 
 @media (max-width: 480px) {
   .dua-image {
-    width: 300px;
+    width: 00px;
     max-width: 100%;
 
     margin: 10px auto 10px;
@@ -1633,12 +1633,12 @@ body {
   z-index: -3;
 
   background:
-    url("images/wedding-bg.png")
+    url("images/coat-bg.png")
       center center / cover no-repeat;
     background-color: #3b2419;
 
   filter:
-    blur(4px)
+    blur(2px)
     brightness(.78)
     saturate(.90) !important;
 
@@ -1692,7 +1692,7 @@ body {
   height: 100lvh !important;
 
   filter:
-    blur(2px)
+    blur(1.5px)
     brightness(.78)
     saturate(.90) !important;
 
@@ -1711,7 +1711,7 @@ body {
   } */
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
 
   .logo {
     left: 50% !important;
@@ -1733,7 +1733,33 @@ body {
     }
   }
 
+} */
+
+@media (max-width: 480px) {
+
+  .logo {
+    left: 50% !important;
+    right: auto !important;
+
+    top: 0px;      /* كان 13px — رفعناه */
+    width: 90px;   /* كان 106px — صغرناه */
+
+    animation: logoFloatMobile 3.5s ease-in-out infinite;
+  }
+
+  @keyframes logoFloatMobile {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(-7px);
+    }
+  }
+
 }
+
 /* إصلاح أرقام التقويم */
 .calendar-large .calendar-numbers {
   position: absolute !important;
@@ -1796,7 +1822,6 @@ body {
 }
 
 
-طبقة خفيفة جدًا فوق الزجاج
 .date-card::before,
 .place-card::before {
   background:
@@ -1813,10 +1838,10 @@ body {
 
   .date-card,
   .place-card {
-    background: rgba(18, 14, 11, 0.38) !important;
+    background: rgba(69, 57, 47, 0.38) !important;
 
-    backdrop-filter: blur(6px) saturate(105%) !important;
-    -webkit-backdrop-filter: blur(6px) saturate(105%) !important;
+    backdrop-filter: blur(8px) saturate(105%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(105%) !important;
 
     border: 1px solid rgba(255, 255, 255, 0.045) !important;
   }
