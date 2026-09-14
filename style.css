@@ -30,11 +30,12 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   color: var(--white);
-  background: var(--page-brown);
+  /* background: var(--page-brown); */
+  background: white;
   font-family: "Noto Naskh Arabic", serif;
 }
 
-@supports (-webkit-touch-callout: none) {
+/* @supports (-webkit-touch-callout: none) {
   html,
   body {
     background: #ffffff;
@@ -43,7 +44,7 @@ body {
   .site-background {
     background-color: var(--page-brown);
   }
-}
+} */
 
 .site-background {
   position: fixed;
@@ -418,7 +419,8 @@ h1 {
   }
 
   .outer-frame {
-    inset: 92px 26px 0;
+    /* inset: 92px 26px 0; */
+     inset: 92px 20px 0;
     border-color: #2b2b2b;
     background: rgba(30, 25, 22, 0.2);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
