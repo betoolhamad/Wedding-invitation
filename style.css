@@ -5,28 +5,19 @@
 }
 
 html {
-  
   scroll-behavior: smooth;
-  /* background: url("images/coat-bg.png") center center / cover no-repeat;
-  background-color: #3b2419; */
-  
 }
 
-
 body {
-  
-  
   min-height: 100vh;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 
   font-family:
       "Noto Naskh Arabic",  
     serif;
 
   color: #fff7ef;
-  /* background-color: #2b1a14 !important; */
-    background-color: #ffffff !important;
-
+  background: #9d7d6a;
   /* padding: 0 12px; */
 }
 
@@ -280,13 +271,13 @@ body {
 .logo {
   position: absolute;
 
-  /* top: 10px; */
+  top: 18px;
   left: 50%;
 
   transform:
     translateX(-50%);
 
-  width: 110px;
+  width: 122px;
 
   z-index: 7;
 
@@ -342,12 +333,10 @@ body {
 
   color:
     rgba(255, 255, 255, .96);
-
-
 }
 
 .small-texts {
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 20px;
 }
 
@@ -1083,6 +1072,7 @@ body {
   .content {
     min-height: 1160px;
     padding: 150px 20px 45px !important;
+    
   }
 }
 
@@ -1581,7 +1571,7 @@ body {
 .dua-image {
   display: block;
 
-  width: 700px;
+  width: 800px;
   max-width: 85%;
 
   height: auto;
@@ -1606,7 +1596,7 @@ body {
 .Fahad-image {
   display: block;
 
-  width: 800px;
+  width: 700px;
   max-width: 80%;
 
   height: auto;
@@ -1621,7 +1611,7 @@ body {
 
 @media (max-width: 480px) {
   .Fahad-image{
-    width: 240px;
+    width: 230px;
     max-width: 80%;
 
     margin: 0 auto 8px;
@@ -1637,10 +1627,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  /* background-size: contain; */
+
   width: 100%;
   height: 100vh;
-  /* height: 100lvh; */
+  height: 100lvh;
 
   z-index: -3;
 
@@ -1667,7 +1657,7 @@ body {
 }
 
 .outer-frame {
-  background: rgba(12, 10, 9, 0.34) !important;
+  background: rgba(30, 25, 22, .34) !important;
   backdrop-filter: none !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: none !important;
@@ -1693,7 +1683,6 @@ body {
 }
 
 @media (max-width: 480px) {
-
   .background {
   top: 0 !important;
   left: 0 !important;
@@ -1711,6 +1700,7 @@ body {
 
   transform: none !important;
 }
+
   .outer-frame {
     background: rgba(30,25,22,.20) !important;
     backdrop-filter: blur(12px) saturate(105%) !important;
@@ -1834,6 +1824,7 @@ body {
 }
 
 
+طبقة خفيفة جدًا فوق الزجاج
 .date-card::before,
 .place-card::before {
   background:
@@ -1850,10 +1841,10 @@ body {
 
   .date-card,
   .place-card {
-    background: rgba(69, 57, 47, 0.38) !important;
+    background: rgba(18, 14, 11, 0.38) !important;
 
-    backdrop-filter: blur(8px) saturate(105%) !important;
-    -webkit-backdrop-filter: blur(8px) saturate(105%) !important;
+    backdrop-filter: blur(6px) saturate(105%) !important;
+    -webkit-backdrop-filter: blur(6px) saturate(105%) !important;
 
     border: 1px solid rgba(255, 255, 255, 0.045) !important;
   }
@@ -2057,8 +2048,8 @@ svg.outer-frame {
 
 }
 
+
 .outer-frame {
   border-color: #2b2b2b !important;
 
 }
-
