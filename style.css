@@ -1628,7 +1628,7 @@ body {
 
   width: 100%;
   height: 100vh;
-  height: 100lvh;
+  /* height: 100lvh; */
 
   z-index: -3;
 
@@ -1655,7 +1655,7 @@ body {
 }
 
 .outer-frame {
-  background: rgba(30, 25, 22, .34) !important;
+  background: rgba(12, 10, 9, 0.34) !important;
   backdrop-filter: none !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: none !important;
@@ -2045,3 +2045,6 @@ svg.outer-frame {
 
 }
 
+.outer-frame {
+  border-color: #2b2b2b !important;
+}
