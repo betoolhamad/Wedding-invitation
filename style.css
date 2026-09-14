@@ -6,7 +6,8 @@
 
 html {
   scroll-behavior: smooth;
-
+  background: url("images/coat-bg.png") center center / cover no-repeat;
+  background-color: #3b2419;
 }
 
 
@@ -20,7 +21,7 @@ body {
 
   color: #fff7ef;
   /* background-color: #2b1a14 !important; */
-    background-color: #ffffff !important;
+    /* background-color: #ffffff !important; */
 
   margin-top: 45px;
   /* padding: 0 12px; */
