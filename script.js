@@ -4,7 +4,7 @@ const reminderButton =
 if (reminderButton) {
   reminderButton.addEventListener("click", () => {
 
-    const eventTitle = "حفل الزواج";
+    const eventTitle = "زواج فهد العشري";
     const location = "قاعة درة ليلتي - القصيم";
 
     const ics =
