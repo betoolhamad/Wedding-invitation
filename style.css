@@ -378,6 +378,18 @@ h1 {
 }
 
 @media (max-width: 480px) {
+  .site-background {
+    inset: 0;
+    background-position: center center;
+    background-size: cover;
+    transform: none;
+    filter: blur(2px) brightness(0.76) saturate(0.88);
+  }
+
+  body {
+    background-color: var(--page-brown);
+  }
+
   .page {
     padding: 18px 5px 24px;
   }
