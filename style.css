@@ -1648,7 +1648,7 @@ body {
 }
 
 .overlay {
-  position: fixed;
+  /* position: fixed; */
   inset: 0;
   z-index: -2;
   background: linear-gradient(180deg, rgba(31,20,15,.08) 0%, rgba(43,28,21,.12) 48%, rgba(42,27,20,.18) 100%);
