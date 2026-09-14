@@ -18,8 +18,8 @@ body {
 
   color: #fff7ef;
   background: #9d7d6a;
-  margin-top: 50px;
-  padding: 0 12px;
+  margin-top: 45px;
+  /* padding: 0 12px; */
 }
 
 
@@ -85,6 +85,10 @@ body {
   transform: scale(1.10);
 }
 
+.words {
+  font-size: 18px;
+}
+
 
 /* ==============================
    الإطار الخارجي — شفاف فقط
@@ -136,11 +140,11 @@ body {
 
   /* التغبيش داخل الكارد */
   backdrop-filter:
-    blur(14px)
+    blur(6px)
     saturate(110%);
 
   -webkit-backdrop-filter:
-    blur(14px)
+    blur(6px)
     saturate(110%);
 
   border:
@@ -215,14 +219,7 @@ body {
   right: -20px;
 
   width: calc(100% + 50px);
-  /* left: 5px;
-  right: 5px;
-  width: calc(100% - 10px);
-  height: calc(100% - 70px); */
 
-  /* left: 20px;
-  right: 20px;
-  width: calc(100% - 40px); */
 
   z-index: 1;
 
@@ -291,12 +288,6 @@ body {
       rgba(15, 7, 4, .25)
     );
 }
-
-
-/* ==================================================
-   GOLD BRANCH
-================================================== */
-
 
 
 
@@ -375,6 +366,7 @@ body {
     18px 0
     5px;
 }
+
 /* ----main name iphone */
 @media (max-width: 480px) {
   .main-name {
@@ -453,19 +445,14 @@ body {
 @media (max-width: 480px) {
   .small-text,
   .details-heading {
-    font-size: 18px !important;
+    font-size: 20px !important;
     line-height: 1.7 !important;
+    white-space: nowrap;
     
   }
 }
 
-@media (max-width: 480px) {
-  .details-heading {
-    font-size: 18px !important;
-    line-height: 1.7 !important;
-    
-  }
-}
+
 
 
 /* ==================================================
@@ -1083,7 +1070,7 @@ body {
  @media (max-width: 480px) {
   .content {
     min-height: 1160px;
-    padding: 150px 15px 45px !important;
+    padding: 150px 20px 45px !important;
   }
 }
 
@@ -1180,11 +1167,11 @@ body {
       rgba(10, 10, 9, .46);
 
     backdrop-filter:
-      blur(12px)
+      blur(6px)
       saturate(110%);
 
     -webkit-backdrop-filter:
-      blur(12px)
+      blur(6px)
       saturate(110%);
 
     border:
@@ -1408,11 +1395,6 @@ body {
   }
 }
 /* 
-@media (max-width: 480px) {
-  .content {
-    padding: 232px 25px 45px !important;
-  }
-} */
 
 /* =========================================
    GOLD BRANCH
@@ -1652,7 +1634,8 @@ body {
 
   background:
     url("images/wedding-bg.png")
-    center center / cover no-repeat;
+      center center / cover no-repeat;
+    background-color: #3b2419;
 
   filter:
     blur(4px)
@@ -1687,8 +1670,8 @@ body {
 .date-card,
 .place-card {
   background: rgba(61, 61, 61, 0.32) !important;
-  backdrop-filter: blur(10px) saturate(110%) !important;
-  -webkit-backdrop-filter: blur(10px) saturate(110%) !important;
+  backdrop-filter: blur(6px) saturate(110%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(110%) !important;
   border: 1px solid rgba(255,255,255,.055) !important;
 }
 
@@ -1709,7 +1692,7 @@ body {
   height: 100lvh !important;
 
   filter:
-    blur(4px)
+    blur(2px)
     brightness(.78)
     saturate(.90) !important;
 
@@ -1718,14 +1701,14 @@ body {
 
   .outer-frame {
     background: rgba(30,25,22,.20) !important;
-    backdrop-filter: blur(13px) saturate(105%) !important;
-    -webkit-backdrop-filter: blur(13px) saturate(105%) !important;
+    backdrop-filter: blur(12px) saturate(105%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(105%) !important;
   }
-  .date-card, .place-card {
+  /* .date-card, .place-card {
     background: rgba(18,16,14,.32) !important;
-    backdrop-filter: blur(10px) saturate(110%) !important;
-    -webkit-backdrop-filter: blur(10px) saturate(110%) !important;
-  }
+    backdrop-filter: blur(6px) saturate(110%) !important;
+    -webkit-backdrop-filter: blur(6px) saturate(110%) !important;
+  } */
 }
 
 @media (max-width: 480px) {
@@ -1813,7 +1796,7 @@ body {
 }
 
 
-/* طبقة خفيفة جدًا فوق الزجاج */
+طبقة خفيفة جدًا فوق الزجاج
 .date-card::before,
 .place-card::before {
   background:
@@ -1832,8 +1815,8 @@ body {
   .place-card {
     background: rgba(18, 14, 11, 0.38) !important;
 
-    backdrop-filter: blur(14px) saturate(105%) !important;
-    -webkit-backdrop-filter: blur(14px) saturate(105%) !important;
+    backdrop-filter: blur(6px) saturate(105%) !important;
+    -webkit-backdrop-filter: blur(6px) saturate(105%) !important;
 
     border: 1px solid rgba(255, 255, 255, 0.045) !important;
   }
