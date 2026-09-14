@@ -1588,7 +1588,7 @@ body {
 
 @media (max-width: 480px) {
   .dua-image {
-    width: 00px;
+    width: 300px;
     max-width: 100%;
 
     margin: 10px auto 10px;
