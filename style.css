@@ -6,28 +6,64 @@
 
 html {
   scroll-behavior: smooth;
-  background: url("images/coat-bg.png") center center / cover no-repeat;
+  /* background: url("images/coat-bg.png") center center / cover no-repeat;
   background-color: #3b2419;
+   */
+  min-height: 100%;
+  background-color: #2b1a14;
 }
 
 
 body {
+  margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
+
+  background: transparent;
+  position: relative;
+  isolation: isolate;
+
+  /* min-height: 100vh; */
   /* overflow-x: hidden; */
 
-  font-family:
+  /* font-family:
       "Noto Naskh Arabic",  
-    serif;
+    serif; */
 
-  color: #fff7ef;
+  /* color: #fff7ef; */
   /* background-color: #2b1a14 !important; */
     /* background-color: #ffffff !important; */
 
-  margin-top: 45px;
-  /* padding: 0 12px; */
+  /* margin-top: 45px;
+  padding: 0 12px; */
 }
 
+body::before {
+  content: "";
 
+  position: fixed;
+
+  /* تمديدها حتى لا تظهر حواف بيضاء مع الـ blur */
+  top: -12px;
+  right: -12px;
+  bottom: -12px;
+  left: -12px;
+
+  z-index: -1;
+  pointer-events: none;
+
+  background-image: url("images/coat-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  filter:
+    blur(5px)
+    brightness(.78)
+    saturate(.90);
+
+  transform: scale(1.02);
+}
 /* ==================================================
    BACKGROUND
    الخلفية مغبشة مثل التصميم السابق
@@ -1639,7 +1675,7 @@ body {
 
   z-index: -3;
 
-  background:
+  /* background:
     url("images/coat-bg.png")
       center center / cover no-repeat;
     background-color: #3b2419;
@@ -1650,6 +1686,7 @@ body {
     saturate(.90) !important;
 
   transform: none !important;
+   */
 }
 
 .overlay {
