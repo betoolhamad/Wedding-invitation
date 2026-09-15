@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   overflow-x: hidden;
-  color: var(--white);
+  color: var(--page-brown);
   background: var(--page-brown);
   font-family: "Noto Naskh Arabic", serif;
 }
@@ -423,7 +423,7 @@ h1 {
   }
 
   .outer-frame {
-    inset: 130px 32px 0;
+    inset: 118px 32px 18px;
     border-color: #2b2b2b;
     background: rgba(30, 25, 22, 0.2);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
