@@ -374,8 +374,8 @@ h1 {
 .ending {
   margin-top: 48px;
   color: var(--white);
-  font-size: 1.45rem;
-  line-height: 1.9;
+  font-size: 1.30rem;
+  line-height: 1.6;
 }
 
 .ending-divider {
@@ -404,7 +404,7 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     transform: none;
-    filter: blur(2px) brightness(0.76) saturate(0.88);
+    filter: blur(2px) brightness(0.85) saturate(0.88);
     background-color: var(--page-brown);
   }
 
@@ -521,7 +521,7 @@ h1 {
   }
 
   .ending {
-    font-size: clamp(1.18rem, 5.5vw, 1.4rem);
+    font-size: 1.12rem;
   }
 }
 
