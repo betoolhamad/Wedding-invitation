@@ -423,7 +423,7 @@ h1 {
   }
 
   .outer-frame {
-    inset: 118px 38px 18px;
+    inset: 118px 40px 18px;
     border-color: #2b2b2b;
     background: rgba(30, 25, 22, 0.2);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
